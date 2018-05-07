@@ -187,7 +187,7 @@ public class VertexColoringAlgorithm {
 	
 	public static void main(String[] args) {
 		int[][] adjacencyMatrix = new int[4][4];
-		adjacencyMatrix[0] = new int[]{ 1, 1, 1, 0 };
+		adjacencyMatrix[0] = new int[]{ 1, 1, 1, 1 };
 		adjacencyMatrix[1] = new int[]{ 1, 1, 1, 0 };
 		adjacencyMatrix[2] = new int[]{ 1, 1, 1, 0 };
 		adjacencyMatrix[3] = new int[]{ 1, 0, 0, 0 };
