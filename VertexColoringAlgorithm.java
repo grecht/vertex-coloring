@@ -2,8 +2,8 @@ import java.util.*;
 
 /**
  * A brute-force vertex coloring algorithm which determines all 
- * non-equivalent colorings of a graph using a minimal amount of
- * colors.
+ * non-equivalent colorings of an undirected graph using a minimal 
+ * amount of colors.
  * 
  * This algorithm was origininally developed for a class project 
  * (https://github.com/DifferentLink/Grape). 
@@ -186,6 +186,9 @@ public class VertexColoringAlgorithm {
 	}
 	
 	public static void main(String[] args) {
+		// adjacency matrix should be symmetrical
+		// as it's representing an undirected graph.
+
 		// petersen graph: https://en.wikipedia.org/wiki/Petersen_graph
 		int[][] petersenGraph = new int[10][10];
 		petersenGraph[0] = new int[] { 0, 1, 0, 0, 1, 1, 0, 0, 0, 0};
