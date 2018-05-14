@@ -71,7 +71,7 @@ public class VertexColoringAlgorithm {
 	}
 	
 	// input array must be of ascending order
-	private boolean getNextPermutation(int[] coloring) {
+	public boolean getNextPermutation(int[] coloring) {
 		int i = coloring.length - 1;
 		while (i > 0 && coloring[i - 1] >= coloring[i]) {
 			i--;
@@ -186,14 +186,23 @@ public class VertexColoringAlgorithm {
 	}
 	
 	public static void main(String[] args) {
-		int[][] adjacencyMatrix = new int[4][4];
-		adjacencyMatrix[0] = new int[]{ 1, 1, 1, 0 };
-		adjacencyMatrix[1] = new int[]{ 1, 1, 1, 0 };
-		adjacencyMatrix[2] = new int[]{ 1, 1, 1, 0 };
-		adjacencyMatrix[3] = new int[]{ 1, 0, 0, 0 };
-		VertexColoringAlgorithm alg = new VertexColoringAlgorithm(adjacencyMatrix, 3);
-		List<int[]> colorings = alg.getAllColorings();	
-		for (int[] coloring : colorings) {
+		// petersen graph: https://en.wikipedia.org/wiki/Petersen_graph
+		int[][] petersenGraph = new int[10][10];
+		petersenGraph[0] = new int[] { 0, 1, 0, 0, 1, 1, 0, 0, 0, 0};
+		petersenGraph[1] = new int[] { 1, 0, 1, 0, 0, 0, 1, 0, 0, 0};
+		petersenGraph[2] = new int[] { 0, 1, 0, 1, 0, 0, 0, 1, 0, 0};
+		petersenGraph[3] = new int[] { 0, 0, 1, 0, 1, 0, 0, 0, 1, 0};
+		petersenGraph[4] = new int[] { 1, 0, 0, 1, 0, 0, 0, 0, 0, 1};
+		petersenGraph[5] = new int[] { 1, 0, 0, 0, 0, 0, 0, 1, 1, 1};
+		petersenGraph[6] = new int[] { 0, 1, 0, 0, 0, 0, 0, 0, 1, 1};
+		petersenGraph[7] = new int[] { 0, 0, 1, 0, 0, 1, 0, 0, 0, 1};
+		petersenGraph[8] = new int[] { 0, 0, 0, 1, 0, 1, 1, 0, 0, 0};
+		petersenGraph[9] = new int[] { 0, 0, 0, 0, 1, 1, 1, 1, 0, 0};	
+		
+		VertexColoringAlgorithm alg2 = new VertexColoringAlgorithm(petersenGraph, 1);
+		List<int[]> colorings2 = alg2.getAllColorings();
+		System.out.println("3-coloring of Petersen graph:");
+		for (int[] coloring : colorings2) {
 			System.out.println(Arrays.toString(coloring));
 		}
 	}
