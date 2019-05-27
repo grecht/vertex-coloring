@@ -40,7 +40,7 @@ public class VertexColoringAlgorithm {
 		// iterate over partitions
 		while (partition != null) {
 			if (partition.length > numberOfColors) {
-				// all colorings with have been found.
+				// all colorings with numberOfColors have been found.
 				break;
 			}			
 			colors = this.partitionToColoring(partition, numberOfVertices);
